@@ -1,14 +1,7 @@
-/* add_card.css */
-
-body {
-    font-family: Arial, sans-serif;
-    background: #f5f5f5;
-}
-
 /* Form outer container */
-form {
+.add-card-container form {
     max-width: 700px;
-    margin: 60px auto;           /* navbar se thoda niche, center */
+    margin: 60px auto;           
     background: white;
     padding: 25px 60px 55px;
     border-radius: 12px;
@@ -16,23 +9,23 @@ form {
 }
 
 /* Each field row */
-form div.form-row {
+.add-card-container form div.form-row {
     display: flex;
     align-items: center;
     margin-bottom: 15px;
 }
 
 /* Labels (Name:, Price:, ...) */
-form label {
+.add-card-container form label {
     width: 100px;
     font-weight: bold;
     color: #2c3e50;
 }
 
 /* Text / number / file inputs */
-form input[type="text"],
-form input[type="number"],
-form input[type="file"] {
+.add-card-container form input[type="text"],
+.add-card-container form input[type="number"],
+.add-card-container form input[type="file"] {
     flex: 1;
     padding: 10px 12px;
     border: 1px solid #ccc;
@@ -42,15 +35,15 @@ form input[type="file"] {
     transition: border-color 0.2s, box-shadow 0.2s;
 }
 
-form input[type="text"]:focus,
-form input[type="number"]:focus,
-form input[type="file"]:focus {
+.add-card-container form input[type="text"]:focus,
+.add-card-container form input[type="number"]:focus,
+.add-card-container form input[type="file"]:focus {
     border-color: #3498db;
     box-shadow: 0 0 0 2px rgba(52,152,219,0.2);
 }
 
 /* Submit button – same green style as navbar buttons */
-form button[type="submit"] {
+.add-card-container form button[type="submit"] {
     margin-top: 10px;
     padding: 10px 24px;
     background: #27ae60;
@@ -63,7 +56,7 @@ form button[type="submit"] {
     transition: background 0.2s, transform 0.1s;
 }
 
-form button[type="submit"]:hover {
+.add-card-container form button[type="submit"]:hover {
     background: #219150;
     transform: translateY(-1px);
 }
@@ -71,17 +64,17 @@ form button[type="submit"]:hover {
 
 /* Mobile */
 @media (max-width: 600px) {
-    form div.form-row {
+    .add-card-container form div.form-row {
         flex-direction: column;
         align-items: flex-start;
     }
 
-    form label {
+    .add-card-container form label {
         width: 100%;
         margin-bottom: 5px;
     }
 
-    form button[type="submit"] {
+    .add-card-container form button[type="submit"] {
         width: 100%;
         float: none;
     }

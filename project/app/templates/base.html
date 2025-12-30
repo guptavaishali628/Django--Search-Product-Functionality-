@@ -15,7 +15,11 @@
 <body>
     <nav>
         <span>Search Bar</span>
+        <form action="{% url 'search' %}" method="POST">
+        {% csrf_token %}
         <input type="search" name="search" placeholder="Search item here">
+        <button type="submit">Search</button>
+        </form>
         <ul>
             <li><a href="{% url 'home' %}">Home</a></li>
             <li><a href="{% url 'add_card' %}">Add Card</a></li>

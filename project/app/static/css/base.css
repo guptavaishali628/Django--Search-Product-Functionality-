@@ -16,23 +16,33 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    gap: 20px;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     color: white;
 }
 
-/* Logo (Search Bar text) */
-nav span {
+/* Logo */
+nav > span {
     font-size: 24px;
     font-weight: bold;
     color: #3498db;
 }
 
-/* Search Input */
+/* Search FORM - PROPERLY STYLED */
+nav form {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+    max-width: 400px;
+}
+
+/* Search input */
 nav input[type="search"] {
+    flex: 1;
     padding: 12px 20px;
     border: none;
     border-radius: 25px;
-    width: 300px;
     font-size: 16px;
     outline: none;
     background: white;
@@ -43,7 +53,25 @@ nav input[type="search"]::placeholder {
     color: #95a5a6;
 }
 
-/* Cart Menu */
+/* Search button */
+nav button[type="submit"] {
+    padding: 12px 20px;
+    background: #3498db;
+    color: white;
+    border: none;
+    border-radius: 25px;
+    font-weight: 500;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+nav button[type="submit"]:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Nav links */
 nav ul {
     list-style: none;
     display: flex;
@@ -65,27 +93,36 @@ nav a {
     transition: all 0.3s ease;
 }
 
-/* Add Card Button */
-nav a:nth-child(1) {
+/* Home (1st) */
+nav ul li:nth-child(1) a {
+    background: #3498db;
+}
+
+nav ul li:nth-child(1) a:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+}
+
+/* Add Card (2nd) */
+nav ul li:nth-child(2) a {
     background: #27ae60;
 }
 
-nav a:nth-child(1):hover {
+nav ul li:nth-child(2) a:hover {
     background: #229954;
     transform: translateY(-2px);
 }
 
-/* Show Items Button */
-nav a:nth-child(2) {
+/* Show Items (3rd) */
+nav ul li:nth-child(3) a {
     background: #e74c3c;
-    padding-right: 45px;
+    padding-right: 35px;
 }
 
-nav a:nth-child(2):hover {
+nav ul li:nth-child(3) a:hover {
     background: #c0392b;
     transform: translateY(-2px);
 }
-
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -95,13 +132,19 @@ nav a:nth-child(2):hover {
         padding: 20px;
     }
     
+    nav form {
+        width: 100%;
+        max-width: none;
+        order: 3;
+    }
+    
     nav input[type="search"] {
         width: 100%;
-        max-width: 300px;
     }
     
     nav ul {
         width: 100%;
         justify-content: center;
+        flex-wrap: wrap;
     }
 }

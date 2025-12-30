@@ -6,9 +6,44 @@
 
 {% block css %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/home.css'%}">
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
 {% endblock css %}
 
 {% block content %}
-   <h1>home page</h1>
+<div class="home-content">
+  <div class="sidebar">
+    <h3>Filters</h3>
+    <ul class="filter-list">
+      <li><a href="{% url 'low_to_high' %}">Low to High</a></li>
+      <li><a href="{% url 'high_to_low' %}">High to Low</a></li>
+      <li><a href="{% url 'arrange_by_name' %}">Arrange by Name</a></li>
+      <li><a href="{% url 'price_between' %}">Price 0-500</a></li>
+      <li><a href="{% url 'price_above' %}">Price above 500</a></li>
+    </ul>
+  </div>  
+
+
+  <div class="products-wrapper">
+    <div class="products-list">
+    {% for i in data %}
+      <div class="product-card">
+        {% if i.Image %}
+          <img src="{{ i.Image.url }}" alt="{{ i.Name }}">
+        {% else %}
+          <div class="no-image">No image</div>
+        {% endif %}
+
+        <div class="product-info">
+          <p class="name">Name: {{ i.Name }}</p>
+          <p class="price">Price: {{ i.Price }}</p>
+          <p>Company: {{ i.Company }}</p>
+          <a class="add-to-cart">Add to Cart</a>
+        </div>
+      </div>
+    {% endfor %}
+    </div>
+  </div>
+</div>  
+
+
 {% endblock content %}

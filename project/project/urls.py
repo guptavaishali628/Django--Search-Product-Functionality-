@@ -27,4 +27,11 @@ urlpatterns = [
     path('add_card/', add_card, name='add_card'),
     path('add_item/', add_item, name='add_item'),
     path('show_item/', show_item, name='show_item'),
+    path('search/', search, name='search'),
+    path('low_to_high',low_to_high, name='low_to_high'),
+    path('high_to_low',high_to_low, name='high_to_low'),
+    path('arrange_by_name',arrange_by_name, name='arrange_by_name'),
+    path('price_between',price_between, name='price_between'),
+    path('price_above',price_above, name='price_above'),
+
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

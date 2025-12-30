@@ -10,7 +10,8 @@
 {% endblock css %}
 
 {% block content %}
-<form action="{% url 'add_item' %}" method="post" enctype="multipart/form-data">
+<div class="add-card-container">
+<form  action="{% url 'add_item' %}" method="post" enctype="multipart/form-data" enctype="multipart/form-data">
     {% csrf_token %}
 
     <div class="form-row">
@@ -32,7 +33,9 @@
         <label>Image:</label>
         <input type="file" name="image">
     </div>
-
+    
     <button type="submit" name="add_item">Add Item</button>
+
 </form>
+</div>
 {% endblock content %}
